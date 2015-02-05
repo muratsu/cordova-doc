@@ -42,7 +42,9 @@ function onDeviceReady() {
 
 ## Installation
 
-`cordova plugin add org.apache.cordova.globalization`
+```javascript
+cordova plugin add org.apache.cordova.globalization
+```
 
 ## API
 - Globalization
