@@ -64,40 +64,31 @@ Although in the global scope, it is not available until after the `deviceready` 
 ## navigator.globalization.getPreferredLanguage
 
 Get the BCP 47 language tag for the client's current language.
+```javascript
+navigator.globalization.getPreferredLanguage(successCallback, errorCallback);
+```
 
-    navigator.globalization.getPreferredLanguage(successCallback, errorCallback);
+#### Description
 
-### Description
+Returns the BCP-47 compliant language identifier tag to the `successCallback` with a `properties` object as a parameter. That object should have a `value` property with a `String` value.
 
-Returns the BCP-47 compliant language identifier tag to the `successCallback` 
-with a `properties` object as a parameter. That object should have a `value`
-property with a `String` value.
+If there is an error getting the language, then the `errorCallback` executes with a `GlobalizationError` object as a parameter. The error's expected code is `GlobalizationError.UNKNOWN_ERROR`.
 
-If there is an error getting the language, then the `errorCallback`
-executes with a `GlobalizationError` object as a parameter. The
-error's expected code is `GlobalizationError.UNKNOWN_ERROR`.
+#### Supported Platforms
 
-### Supported Platforms
+![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/android-success.png) ![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/blackberry-success.png) ![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/browser-fail.png) ![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/firefox-success.png) ![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/fireos-success.png) ![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/ios-success.png) ![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/windows-success.png) ![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/wp8-success.png) ![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/ubuntu-fail.png)
 
-![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/android-success.png)
-![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/blackberry-success.png)
-![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/browser-fail.png)
-![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/firefox-success.png)
-![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/fireos-success.png)
-![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/ios-success.png)
-![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/windows-success.png)
-![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/wp8-success.png)
-![](https://raw.githubusercontent.com/muratsu/cordova-doc/master/img/ubuntu-fail.png)
-
-### Example
+#### Example
 
 When the browser is set to the `en-US` language, this should display a
 popup dialog with the text `language: en-US`:
 
-    navigator.globalization.getPreferredLanguage(
-        function (language) {alert('language: ' + language.value + '\n');},
-        function () {alert('Error getting language\n');}
-    );
+```javascript
+navigator.globalization.getPreferredLanguage(
+    function (language) {alert('language: ' + language.value + '\n');},
+    function () {alert('Error getting language\n');}
+);
+```
 
 ### Android Quirks
 
