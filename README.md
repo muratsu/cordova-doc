@@ -42,7 +42,7 @@ function onDeviceReady() {
 
 ## Installation
 
-```javascript
+```dos
 cordova plugin add org.apache.cordova.globalization
 ```
 
