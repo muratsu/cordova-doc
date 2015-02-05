@@ -33,33 +33,32 @@ This plugin defines global `navigator.globalization` object.
 
 Although in the global scope, it is not available until after the `deviceready` event.
 
-    document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-        console.log(navigator.globalization);
-    }
+```javascript
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    console.log(navigator.globalization);
+}
+```
 
 ## Installation
 
-    cordova plugin add org.apache.cordova.globalization
+`cordova plugin add org.apache.cordova.globalization`
 
-## Objects
-
-- GlobalizationError
-
-## Methods
-
-- navigator.globalization.getPreferredLanguage
-- navigator.globalization.getLocaleName
-- navigator.globalization.dateToString
-- navigator.globalization.stringToDate
-- navigator.globalization.getDatePattern
-- navigator.globalization.getDateNames
-- navigator.globalization.isDayLightSavingsTime
-- navigator.globalization.getFirstDayOfWeek
-- navigator.globalization.numberToString
-- navigator.globalization.stringToNumber
-- navigator.globalization.getNumberPattern
-- navigator.globalization.getCurrencyPattern
+## API
+- Globalization
+    - navigator.globalization.getPreferredLanguage
+    - navigator.globalization.getLocaleName
+    - navigator.globalization.dateToString
+    - navigator.globalization.stringToDate
+    - navigator.globalization.getDatePattern
+    - navigator.globalization.getDateNames
+    - navigator.globalization.isDayLightSavingsTime
+    - navigator.globalization.getFirstDayOfWeek
+    - navigator.globalization.numberToString
+    - navigator.globalization.stringToNumber
+    - navigator.globalization.getNumberPattern
+    - navigator.globalization.getCurrencyPattern
+    - Class: GlobalizationError
 
 ## navigator.globalization.getPreferredLanguage
 
@@ -90,12 +89,12 @@ navigator.globalization.getPreferredLanguage(
 );
 ```
 
-### Android Quirks
+#### Android Quirks
 
 - Returns the ISO 639-1 two-letter language code, upper case ISO 3166-1 
 country code and variant separated by hyphens. Examples: "en", "en-US", "US"
 
-### Windows Phone 8 Quirks
+#### Windows Phone 8 Quirks
 
 - Returns the ISO 639-1 two-letter language code and ISO 3166-1 country code
 of the regional variant corresponding to the "Language" setting, separated by
@@ -103,7 +102,7 @@ a hyphen.
 - Note that the regional variant is a property of the "Language" setting and
 not determined by the unrelated "Country/Region" setting on Windows Phone.
 
-### Windows Quirks
+#### Windows Quirks
 
 - Returns the ISO 639-1 two-letter language code and ISO 3166-1 country code
 of the regional variant corresponding to the "Language" setting, separated by
